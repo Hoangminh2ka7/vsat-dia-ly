@@ -5,289 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luyện Thi VSAT Địa Lí</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: #f0f2f5; color: #333; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { text-align: center; color: #0056b3; margin-bottom: 5px; text-transform: uppercase; font-size: 24px; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 30px; font-size: 18px; }
-        .question-box { margin-bottom: 25px; padding: 20px; border-left: 5px solid #0056b3; background: #f8f9fa; border-radius: 4px; }
-        .options, .sub-q, .match-row { margin-top: 10px; margin-left: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 15px; background: #f0f2f5; color: #333; }
+        .container { max-width: 850px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { text-align: center; color: #0056b3; font-size: 22px; text-transform: uppercase; margin-bottom: 5px; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 25px; font-size: 16px; }
+        .question-box { margin-bottom: 20px; padding: 15px; border-left: 5px solid #0056b3; background: #f8f9fa; border-radius: 4px; }
+        .options, .sub-q { margin-top: 8px; margin-left: 5px; }
         .options label { display: block; margin-bottom: 8px; cursor: pointer; }
-        .sub-q-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed #ddd; }
+        .sub-q-item { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #ddd; }
         .sub-q-item:last-child { border-bottom: none; }
-        .tf-options { margin-top: 5px; }
-        .tf-options label { margin-right: 15px; cursor: pointer; }
-        .match-item { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        select, input[type="text"] { padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; width: 100%; max-width: 300px; box-sizing: border-box; }
+        .tf-options { margin-top: 5px; display: flex; gap: 15px; }
+        .tf-options label { cursor: pointer; display: flex; align-items: center; gap: 4px; }
+        .match-item { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        select, input[type="text"] { padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; width: 100%; max-width: 280px; box-sizing: border-box; }
         input[type="text"] { max-width: 100%; }
-        button { background: #0056b3; color: white; border: none; padding: 10px 18px; cursor: pointer; border-radius: 5px; font-size: 14px; margin-top: 15px; font-weight: bold; transition: 0.2s; }
+        button { background: #0056b3; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 5px; font-size: 14px; margin-top: 10px; font-weight: bold; }
         button:hover { background: #004085; }
-        .explanation { display: none; background: #e2f0d9; padding: 15px; margin-top: 15px; border-radius: 6px; color: #2e511c; border: 1px solid #c3e6cb; line-height: 1.5; }
-        .text-bold { font-weight: bold; }
-        .match-pool { margin: 10px 0; background: #e9ecef; padding: 12px; border-radius: 6px; font-size: 14px; border-left: 3px solid #6c757d; }
+        .explanation { display: none; background: #e2f0d9; padding: 12px; margin-top: 12px; border-radius: 6px; color: #2e511c; border: 1px solid #c3e6cb; font-size: 14px; line-height: 1.4; }
+        .text-bold { font-weight: bold; margin: 0 0 8px 0; }
+        .match-pool { margin: 8px 0; background: #e9ecef; padding: 10px; border-radius: 6px; font-size: 14px; border-left: 3px solid #6c757d; }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>Hệ Thống Luyện Thi V-SAT Địa Lí 12</h1>
-    <p style="text-align: center; color: #666; margin-bottom: 30px;">Cấu trúc chuẩn Đánh giá năng lực V-SAT (Ngân hàng câu hỏi số 1)</p>
+    <p style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">Cấu trúc chuẩn Đánh giá năng lực V-SAT</p>
 
-    <h2>PHẦN I: Câu hỏi trắc nghiệm khách quan (4 lựa chọn)</h2>
-    <p><i>Chọn một đáp án đúng duy nhất trong các phương án A, B, C, D.</i></p>
+    <div id="quiz-content"></div>
+</div>
 
-    <div class="question-box">
-        <p class="text-bold">Câu 1: Căn cứ vào Atlat Địa lí Việt Nam trang Khí hậu, trạm khí tượng nào sau đây có lượng mưa lớn nhất vào tháng IX?</p>
-        <div class="options">
-            <label><input type="radio" name="p1_q1" value="A"> A. Hà Nội</label>
-            <label><input type="radio" name="p1_q1" value="B"> B. Huế</label>
-            <label><input type="radio" name="p1_q1" value="C"> C. Nha Trang</label>
-            <label><input type="radio" name="p1_q1" value="D"> D. TP. Hồ Chí Minh</label>
-        </div>
-        <button onclick="checkRadio('p1_q1', 'B', 'exp_p1_q1')">Kiểm tra đáp án</button>
-        <div id="exp_p1_q1" class="explanation">
-            <strong>Đáp án đúng: B</strong><br>
-            <em>Giải thích:</em> Huế nằm ở dải đất duyên hải miền Trung, bắt đầu bước vào mùa mưa rất lớn vào tháng IX do chịu ảnh hưởng phối hợp của gió mùa đông bắc thổi qua biển, địa hình núi chắn gió và các nhiễu động thời tiết như dải hội tụ nhiệt đới, bão.
-        </div>
-    </div>
+<script>
+const quizData = {
+    part1: [
+        { id: 1, q: "Căn cứ vào Atlat Địa lí Việt Nam trang Khí hậu, trạm khí tượng nào sau đây có lượng mưa lớn nhất vào tháng IX?", ans: ["A. Hà Nội", "B. Huế", "C. Nha Trang", "D. TP. Hồ Chí Minh"], c: "B", exp: "Huế bước vào mùa mưa lớn từ tháng IX do gió mùa đông bắc qua biển gặp địa hình chắn gió núi Bạch Mã và dải hội tụ nhiệt đới." },
+        { id: 2, q: "Phát biểu nào sau đây đúng về vị trí địa lí vùng nội chí tuyến của nước ta?", ans: ["A. Mọi nơi đều có hai lần Mặt Trời đi qua thiên đỉnh trong năm.", "B. Luôn luôn chịu tác động mạnh của khối khí ôn đới.", "C. Lượng mưa phân bố hoàn toàn đồng đều giữa tất cả các tháng.", "D. Biên độ nhiệt độ trung bình năm tăng dần từ Bắc vào Nam."], c: "A", exp: "Nước ta nằm hoàn toàn trong vùng nội chí tuyến Bắc bán cầu nên mọi nơi đều có 2 lần Mặt Trời qua thiên đỉnh/năm." },
+        { id: 3, q: "Biện pháp chủ yếu mang tính lâu dài để bảo vệ đất nông nghiệp ở vùng Đồng bằng sông Cửu Long hiện nay là", ans: ["A. Chuyển đổi toàn bộ đất rừng ngập mặn sang canh tác lúa.", "B. Đẩy mạnh thau chua, rửa mặn và chủ động nguồn nước ngọt.", "C. Chỉ sử dụng phân bón hóa học liều lượng cao để tăng vụ.", "D. Ngăn hoàn toàn dòng chảy của các nhánh sông đổ ra biển lớn."], c: "B", exp: "ĐBSCL bị nhiễm phèn, mặn lớn nên thủy lợi thau chua rửa mặn, cấp nước ngọt là giải pháp số một." },
+        { id: 4, q: "Phát biểu nào sau đây không đúng về đặc điểm đô thị hóa ở nước ta hiện nay?", ans: ["A. Tỉ lệ dân cư thành thị có xu hướng tăng liên tục qua các năm.", "B. Trình độ đô thị hóa đang ngày càng được nâng cao.", "C. Các đô thị lớn phân bố rất đồng đều ở tất cả các vùng miền.", "D. Đô thị hóa có vai trò thúc đẩy sự chuyển dịch cơ cấu kinh tế."], c: "C", exp: "Mạng lưới đô thị nước ta phân bố không đều, tập trung nhiều ở Đồng bằng sông Hồng và Đông Nam Bộ." },
+        { id: 5, q: "Ngành công nghiệp năng lượng nước ta phát triển mạnh chủ yếu dựa trên thế mạnh nổi bật nào?", ans: ["A. Cơ sở hạ tầng kỹ thuật hiện đại, đồng bộ hóa cao trên toàn quốc.", "B. Nguồn tài nguyên nhiên liệu phong phú và thị trường tiêu thụ rộng lớn.", "C. Nguồn vốn đầu tư trực tiếp từ nước ngoài dồi dào tuyệt đối.", "D. Trình độ kỹ thuật của toàn bộ lực lượng lao động dẫn đầu khu vực."], c: "B", exp: "Do có tài nguyên dồi dào (than, dầu khí, thủy năng) kết hợp với nhu cầu sử dụng năng lượng tăng cao." },
+        { id: 6, q: "Ý nghĩa chiến lược chủ yếu về mặt kinh tế của các đảo và quần đảo nước ta là", ans: ["A. Tạo điểm tựa vững chắc để bảo vệ an ninh biên giới vùng biển.", "B. Làm căn cứ tiến ra khơi xa khai thác hiệu quả nguồn lợi biển.", "C. Nơi duy nhất trên cả nước có thể phát triển ngành du lịch nghỉ dưỡng.", "D. Tạo thành hệ thống tiền tiêu canh gác và bảo vệ vùng đất liền."], c: "B", exp: "Đề hỏi về ý nghĩa 'kinh tế' nên chọn phương án làm căn cứ khai thác nguồn lợi biển. Các ý khác thuộc quốc phòng." }
+    ],
+    part2: [
+        { id: 1, q: "Cho đoạn thông tin: 'Địa hình nước ta phân hóa đa dạng thành các vùng đồi núi và đồng bằng. Địa hình đồi núi chiếm 3/4 diện tích đất liền nhưng chủ yếu là đồi núi thấp.' Hãy đánh giá tính đúng sai của các phát biểu sau:", items: ["a) Cấu trúc địa hình nước ta thể hiện tính chất phân bậc rõ rệt theo độ cao nhờ vận động tân kiến tạo.", "b) Địa hình đồi núi thấp chiếm ưu thế tuyệt đối giúp việc xây dựng mạng lưới giao thông miền núi diễn ra hoàn toàn thuận lợi, không gặp thiên tai.", "c) Bộ phận đồng bằng chỉ chiếm 1/4 diện tích và bị chia cắt thành đồng bằng châu thổ sông và các đồng bằng ven biển miền Trung.", "d) Hai hướng địa hình chính của các dãy núi nước ta là hướng tây bắc - đông nam và hướng vòng cung."], c: ["Đ","S","Đ","Đ"], exp: "b) Sai vì vùng đồi núi thấp vẫn có địa hình cắt xẻ hiểm trở, mùa mưa hay sạt lở đất gây hại giao thông." },
+        { id: 2, q: "Đánh giá tác động của Biển Đông đối với đặc điểm thiên nhiên và khí hậu nước ta:", items: ["a) Biển Đông cung cấp lượng ẩm lớn làm tăng độ ẩm tương đối của các khối khí thổi vào đất liền.", "b) Do tác động của dòng biển ấm, Biển Đông làm cho khí hậu nước ta mang tính chất hoang mạc, bán hoang mạc khô hạn.", "c) Biển Đông góp phần làm giảm bớt tính chất khắc nghiệt, khô hanh của thời tiết lạnh đầu mùa đông.", "d) Biển Đông là nguồn gây ra các thiên tai nguy hiểm như bão, áp thấp nhiệt đới và sạt lở bờ biển ở nước ta."], c: ["Đ","S","Đ","Đ"], exp: "b) Sai vì Biển Đông điều hòa khí hậu, làm tăng lượng mưa, ngăn quá trình hoang mạc hóa." },
+        { id: 3, q: "Khi nghiên cứu về nguồn lao động và vấn đề việc làm ở nước ta hiện nay:", items: ["a) Nguồn lao động nước ta rất dồi dào và tiếp tục tăng nhanh qua các năm, tạo áp lực lớn giải quyết việc làm.", "b) Trình độ chuyên môn kỹ thuật của lao động nước ta hiện nay đã đáp ứng hoàn toàn nhu cầu công nghệ cao tự động hóa.", "c) Tình trạng thiếu việc làm (vừa làm vừa nghỉ) diễn ra gay gắt nhất ở khu vực nông thôn do tính chất mùa vụ.", "d) Xu hướng cơ cấu lao động theo ngành đang dịch chuyển theo hướng giảm tỉ trọng ở khu vực nông - lâm - thủy sản."], c: ["Đ","S","Đ","Đ"], exp: "b) Sai vì phần lớn lao động nước ta (hơn 70%) chưa qua đào tạo kỹ thuật chuyên môn." },
+        { id: 4, q: "Về xu hướng chuyển dịch cơ cấu kinh tế theo lãnh thổ ở nước ta hiện nay:", items: ["a) Đang hình thành các vùng chuyên canh nông nghiệp quy mô lớn (như cà phê ở Tây Nguyên, lúa ở ĐBSCL).", "b) Các khu công nghiệp tập trung, khu chế xuất quy mô lớn xuất hiện ngày càng nhiều tại các vùng kinh tế trọng điểm.", "c) Đông Nam Bộ đã vươn lên thành vùng dẫn đầu cả nước về giá trị sản xuất công nghiệp.", "d) Quá trình phát triển các vùng kinh tế làm xóa bỏ hoàn toàn sự phân hóa giàu nghèo và chênh lệch thu nhập giữa các địa phương."], c: ["Đ","Đ","Đ","S"], exp: "d) Sai vì sự phát triển của các vùng động lực thúc đẩy kinh tế nhanh hơn làm tăng khoảng cách thu nhập tuyệt đối." },
+        { id: 5, q: "Nhận định về đặc điểm phát triển ngành thủy sản nước ta:", items: ["a) Sản lượng thủy sản nuôi trồng hiện nay nhìn chung đã vượt qua sản lượng thủy sản khai thác tự nhiên.", "b) Đồng bằng sông Cửu Long là vùng đứng vị trí số một cả nước về cả nuôi trồng và đánh bắt hải sản.", "c) Nhà nước khuyến khích ngư dân đầu tư phương tiện hiện đại để đánh bắt hải sản xa bờ.", "d) Thị trường xuất khẩu thủy sản của nước ta vô cùng ổn định, hoàn toàn không chịu tác động từ các rào cản kỹ thuật của thế giới."], c: ["Đ","Đ","Đ","S"], exp: "d) Sai vì xuất khẩu thủy sản gặp nhiều khó khăn do rào cản kỹ thuật, thuế chống bán phá giá, thẻ vàng IUU." },
+        { id: 6, q: "Về đặc điểm loại hình giao thông vận tải đường bộ (đường ô tô) nước ta:", items: ["a) Đây là loại hình vận tải đóng vai trò cốt lõi, chiếm tỉ trọng lớn nhất về khối lượng hàng hóa vận chuyển.", "b) Mạng lưới đường ô tô hiện nay đã được cải tạo, mở rộng và phủ kín đến hầu hết các trung tâm xã vùng sâu vùng xa.", "c) Tuyến đường có ý nghĩa xương sống thúc đẩy giao lưu kinh tế dọc trục Bắc - Nam là Quốc lộ 1.", "d) Vận tải đường bộ có ưu điểm vượt trội về giá thành rẻ nhất và chuyên chở hàng nặng siêu trường đi quốc tế châu đại dương."], c: ["Đ","Đ","Đ","S"], exp: "d) Sai vì ngành vận tải có giá thành rẻ nhất, chuyên chở siêu trọng viễn dương phải là đường biển." },
+        { id: 7, q: "Đánh giá tiềm năng phát triển của vùng Trung du và miền núi Bắc Bộ:", items: ["a) Đây là vùng có trữ lượng và tiềm năng phát triển ngành thủy điện đứng vị trí số một cả nước nhờ hệ thống sông Đà, sông Gâm.", "b) Kiểu khí hậu có mùa đông lạnh kéo dài tạo điều kiện thuận lợi để vùng trồng cây cận nhiệt (chè) và các loại dược liệu ôn đới.", "c) Toàn bộ nguồn tài nguyên khoáng sản của vùng đã được khai thác triệt để ở mức tối đa, không còn tiềm năng thăm dò.", "d) Tốc độ phát triển kinh tế xã hội diễn ra rất đồng đều, không có sự chênh lệch lớn giữa các tỉnh nội địa và tỉnh biên giới."], c: ["Đ","Đ","S","S"], exp: "c) Sai vì mỏ khoáng sản vẫn còn trữ lượng lớn. d) Sai vì có sự chênh lệch lớn giữa các tỉnh vùng thấp và vùng cao." },
+        { id: 8, q: "Nhận định về đặc điểm tự nhiên và kinh tế của vùng Tây Nguyên:", items: ["a) Tây Nguyên là vùng kinh tế duy nhất của nước ta hiện nay hoàn toàn không có đường ranh giới tiếp giáp với biển.", "b) Đất đỏ bazan giàu dinh dưỡng, tầng phong hóa sâu là thế mạnh cốt lõi để hình thành các vùng chuyên canh cây công nghiệp lâu năm.", "c) Cà phê là cây công nghiệp lâu năm quan trọng số một của vùng và đứng hàng đầu cả nước về quy mô sản lượng.", "d) Ngành công nghiệp chế tạo máy móc cơ khí nặng đang đóng vai trò chủ đạo, đóng góp trên 80% GDP của vùng Tây Nguyên."], c: ["Đ","Đ","Đ","S"], exp: "d) Sai vì kinh tế Tây Nguyên chủ yếu là nông lâm nghiệp, công nghiệp chính là thủy điện và chế biến nông sản." },
+        { id: 9, q: "Về vấn đề phát triển tổng hợp kinh tế biển ở vùng Duyên hải Nam Trung Bộ:", items: ["a) Vũng có bờ biển khúc khuỷu, nhiều vịnh nước sâu rất thuận lợi để xây dựng cảng biển quy mô lớn (Vũng Rô, Vân Phong).", "b) Nghề làm muối rất phát triển tại Sa Huỳnh, Cà Ná nhờ điều kiện nhiệt độ nước biển cao, số giờ nắng nhiều và ít sông lớn đổ ra biển.", "c) Hoạt động du lịch biển đảo ở vùng này phát triển mạnh là nhờ có bãi cát đẹp trải dài, khí hậu có mùa đông lạnh buốt đặc trưng.", "d) Việc đẩy mạnh đánh bắt hải sản xa bờ của vùng có ý nghĩa to lớn đối với việc khẳng định và bảo vệ chủ quyền biển đảo."], c: ["Đ","Đ","S","Đ"], exp: "c) Sai vì Duyên hải Nam Trung Bộ có khí hậu cận xích đạo, nóng quanh năm, không có mùa đông lạnh buốt." }
+    ],
+    part3: [
+        { id: 1, t: "Ghép cặp vùng kinh tế với thế mạnh sản xuất nông nghiệp đặc trưng:", L: ["1. Tây Nguyên", "2. Đồng bằng sông Cửu Long", "3. Trung du MN Bắc Bộ", "4. Đồng bằng sông Hồng"], R: ["A. Trồng cây CN lâu năm số 1 (cà phê) trên đất bazan.", "B. Cây ăn quả nhiệt đới, nuôi trồng thủy sản nước ngọt lớn nhất.", "C. Trồng chè, cây dược liệu ôn đới nhờ khí hậu có đông lạnh.", "D. Thâm canh lúa năng suất cao, phát triển mạnh cây ưa lạnh vụ đông."], c: ["A","B","C","D"] },
+        { id: 2, t: "Ghép tên nhà máy thủy điện với hệ thống sông tương ứng:", L: ["1. Sơn La", "2. Yaly", "3. Trị An", "4. Thác Bà"], R: ["A. Sông Chảy", "B. Sông Sê San", "C. Sông Đồng Nai", "D. Sông Đà"], c: ["D","B","C","A"] },
+        { id: 3, t: "Ghép trung tâm công nghiệp với phân cấp quy mô tương ứng:", L: ["1. TP. Hồ Chí Minh", "2. Hải Phòng", "3. Đà Nẵng", "4. Lào Cai"], R: ["A. Quy mô từ 9 đến 50 nghìn tỷ đồng.", "B. Quy mô trên 120 nghìn tỷ đồng.", "C. Quy mô dưới 9 nghìn tỷ đồng.", "D. Quy mô từ 50 đến 120 nghìn tỷ đồng."], c: ["B","D","A","C"] },
+        { id: 4, t: "Ghép nhóm đất chính với vùng phân bố chủ yếu nhất:", L: ["1. Đất phù sa ngọt", "2. Đất feralit trên đá vôi", "3. Đất feralit trên đá bazan", "4. Đất cát biển"], R: ["A. Các cao nguyên ở Tây Nguyên.", "B. Dọc theo sông Tiền, sông Hậu.", "C. Vùng đồi núi đá vôi Đông Bắc, Tây Bắc.", "D. Dải đất duyên hải miền Trung."], c: ["B","C","A","D"] },
+        { id: 5, t: "Ghép loại tài nguyên khoáng sản với mỏ khai thác chính:", L: ["1. Than đá", "2. Bôxit", "3. Dầu mỏ", "4. Apatit"], R: ["A. Lào Cai", "B. Quảng Ninh", "C. Thềm lục địa phía Nam", "D. Lâm Đồng"], c: ["B","D","C","A"] }
+    ],
+    part4: [
+        { id: 1, q: "Năm 2020, dân số thành thị nước ta là 35,9 triệu người, tổng dân số cả nước là 97,3 triệu người. Tính tỉ lệ dân thành thị (Làm tròn đến 1 chữ số thập phân, không điền dấu %).", c: "36.9", exp: "Tỉ lệ = (35.9 / 97.3) * 100 = 36.89% -> 36.9" },
+        { id: 2, q: "Hiện nay nước ta có tổng cộng bao nhiêu tỉnh và thành phố trực thuộc Trung ương giáp trực tiếp với biển?", c: "28", exp: "Nước ta có 28 tỉnh, thành phố giáp biển từ Quảng Ninh đến Kiên Giang." },
+        { id: 3, q: "Điền tên địa danh còn thiếu: Đường bờ biển nước ta dài 3260 km chạy dọc từ Móng Cái (Quảng Ninh) đến .......... (Kiên Giang).", c: "Hà Tiên", exp: "Đường bờ biển kết thúc tại thành phố Hà Tiên, tỉnh Kiên Giang." },
+        { id: 4, q: "Vùng kinh tế nào có diện tích tự nhiên rộng lớn nhất trong 7 vùng kinh tế nước ta?", c: "Trung du và miền núi Bắc Bộ", exp: "Trung du và miền núi Bắc Bộ rộng hơn 95.000 km², chiếm gần 30% diện tích cả nước." },
+        { id: 5, q: "Gió Tây Nam đầu mùa hạ vượt núi Trường Sơn gây hiện tượng khô nóng ở miền Trung gọi là hiệu ứng gì?", c: "Phơn", exp: "Hiện tượng này gọi là hiệu ứng Phơn (hoặc Gió Lào)." }
+    ]
+};
 
-    <div class="question-box">
-        <p class="text-bold">Câu 2: Phát biểu nào sau đây đúng về vị trí địa lí vùng nội chí tuyến của nước ta?</p>
-        <div class="options">
-            <label><input type="radio" name="p1_q2" value="A"> A. Mọi nơi đều có hai lần Mặt Trời đi qua thiên đỉnh trong năm.</label>
-            <label><input type="radio" name="p1_q2" value="B"> B. Luôn luôn chịu tác động mạnh của khối khí ôn đới.</label>
-            <label><input type="radio" name="p1_q2" value="C"> C. Lượng mưa phân bố hoàn toàn đồng đều giữa tất cả các tháng.</label>
-            <label><input type="radio" name="p1_q2" value="D"> D. Biên độ nhiệt độ trung bình năm tăng dần từ Bắc vào Nam.</label>
-        </div>
-        <button onclick="checkRadio('p1_q2', 'A', 'exp_p1_q2')">Kiểm tra đáp án</button>
-        <div id="exp_p1_q2" class="explanation">
-            <strong>Đáp án đúng: A</strong><br>
-            <em>Giải thích:</em> Do nước ta nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc (khoảng vĩ độ từ 8°34'B đến 23°23'B), nên mọi địa điểm trên lãnh thổ đều nhận được lượng bức xạ lớn và có 2 lần Mặt Trời đi qua thiên đỉnh trong một năm.
-        </div>
-    </div>
+const html = [];
+html.push('<h2>PHẦN I: Câu hỏi trắc nghiệm (4 lựa chọn)</h2>');
+quizData.part1.forEach(q => {
+    html.push(`<div class="question-box"><p class="text-bold">Câu ${q.id}: ${q.q}</p><div class="options">`);
+    q.ans.forEach(o => {
+        let code = o.charAt(0);
+        html.push(`<label><input type="radio" name="p1_${q.id}" value="${code}"> ${o}</label>`);
+    });
+    html.push(`</div><button onclick="checkP1(${q.id}, '${q.c}')">Kiểm tra đáp án</button><div id="exp_p1_${q.id}" class="explanation"><strong>Đáp án đúng: ${q.c}</strong><br>${q.exp}</div></div>`);
+});
 
-    <div class="question-box">
-        <p class="text-bold">Câu 3: Biện pháp chủ yếu mang tính lâu dài để bảo vệ đất nông nghiệp ở vùng Đồng bằng sông Cửu Long hiện nay là</p>
-        <div class="options">
-            <label><input type="radio" name="p1_q3" value="A"> A. Chuyển đổi toàn bộ đất rừng ngập mặn sang canh tác lúa.</label>
-            <label><input type="radio" name="p1_q3" value="B"> B. Đẩy mạnh thau chua, rửa mặn và chủ động nguồn nước ngọt.</label>
-            <label><input type="radio" name="p1_q3" value="C"> C. Chỉ sử dụng phân bón hóa học liều lượng cao để tăng vụ.</label>
-            <label><input type="radio" name="p1_q3" value="D"> D. Ngăn hoàn toàn dòng chảy của các nhánh sông đổ ra biển lớn.</label>
-        </div>
-        <button onclick="checkRadio('p1_q3', 'B', 'exp_p1_q3')">Kiểm tra đáp án</button>
-        <div id="exp_p1_q3" class="explanation">
-            <strong>Đáp án đúng: B</strong><br>
-            <em>Giải thích:</em> Đồng bằng sông Cửu Long có diện tích đất phèn, đất mặn chiếm tỉ lệ lớn và đang chịu tác động của xâm nhập mặn. Biện pháp thủy lợi hàng đầu là thau chua rửa mặn, kết hợp đắp đập, làm kênh để chủ động nguồn nước ngọt tưới tiêu.
-        </div>
-    </div>
+html.push('<h2>PHẦN II: Câu hỏi Đúng / Sai</h2>');
+quizData.part2.forEach(q => {
+    html.push(`<div class="question-box"><p class="text-bold">Câu ${q.id}: ${q.q}</p><div class="sub-q">`);
+    q.items.forEach((item, idx) => {
+        let code = String.fromCharCode(97 + idx);
+        html.push(`<div class="sub-q-item"><p>${item}</p><div class="tf-options">`);
+        html.push(`<label><input type="radio" name="p2_${q.id}_${code}" value="Đ"> Đúng</label>`);
+        html.push(`<label><input type="radio" name="p2_${q.id}_${code}" value="S"> Sai</label>`);
+        html.push(`</div></div>`);
+    });
+    html.push(`</div><button onclick="checkP2(${q.id}, ${JSON.stringify(q.c)})">Kiểm tra đáp án</button><div id="exp_p2_${q.id}" class="explanation"><strong>Giải thích:</strong><br>${q.exp}</div></div>`);
+});
 
-    <div class="question-box">
-        <p class="text-bold">Câu 4: Phát biểu nào sau đây không đúng về đặc điểm đô thị hóa ở nước ta hiện nay?</p>
-        <div class="options">
-            <label><input type="radio" name="p1_q4" value="A"> A. Tỉ lệ dân cư thành thị có xu hướng tăng liên tục qua các năm.</label>
-            <label><input type="radio" name="p1_q4" value="B"> B. Trình độ đô thị hóa đang ngày càng được nâng cao.</label>
-            <label><input type="radio" name="p1_q4" value="C"> C. Các đô thị lớn phân bố rất đồng đều ở tất cả các vùng miền.</label>
-            <label><input type="radio" name="p1_q4" value="D"> D. Đô thị hóa có vai trò thúc đẩy sự chuyển dịch cơ cấu kinh tế.</label>
-        </div>
-        <button onclick="checkRadio('p1_q4', 'C', 'exp_p1_q4')">Kiểm tra đáp án</button>
-        <div id="exp_p1_q4" class="explanation">
-            <strong>Đáp án đúng: C</strong><br>
-            <em>Giải thích:</em> Mạng lưới đô thị nước ta phân bố không đều, tập trung với mật độ cao ở Đồng bằng sông Hồng và Đông Nam Bộ, trong khi ở vùng núi như Tây Bắc hay Tây Nguyên mạng lưới đô thị còn thưa thớt hơn nhiều.
-        </div>
-    </div>
+html.push('<h2>PHẦN III: Câu hỏi Ghép nối</h2>');
+quizData.part3.forEach(q => {
+    html.push(`<div class="question-box"><p class="text-bold">Câu ${q.id}: ${q.t}</p><div class="match-pool"><strong>Cột bên phải:</strong><br>${q.R.map((r, i) => String.fromCharCode(65+i)+'. '+r).join('<br>')}</div>`);
+    q.L.forEach((l, idx) => {
+        html.push(`<div class="match-item"><span>${l} nối với:</span><select id="p3_${q.id}_${idx}"><option value="">-- Chọn --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div>`);
+    });
+    html.push(`<button onclick="checkP3(${q.id}, ${JSON.stringify(q.c)})">Kiểm tra đáp án</button><div id="exp_p3_${q.id}" class="explanation"><strong>Đáp án đúng:</strong> ${q.c.map((c, i) => (i+1)+'-'+c).join(', ')}</div></div>`);
+});
 
-    <div class="question-box">
-        <p class="text-bold">Câu 5: Ngành công nghiệp năng lượng nước ta phát triển mạnh chủ yếu dựa trên thế mạnh nổi bật nào?</p>
-        <div class="options">
-            <label><input type="radio" name="p1_q5" value="A"> A. Cơ sở hạ tầng kỹ thuật hiện đại, đồng bộ hóa cao trên toàn quốc.</label>
-            <label><input type="radio" name="p1_q5" value="B"> B. Nguồn tài nguyên nhiên liệu phong phú và thị trường tiêu thụ rộng lớn.</label>
-            <label><input type="radio" name="p1_q5" value="C"> C. Nguồn vốn đầu tư trực tiếp từ nước ngoài dồi dào tuyệt đối.</label>
-            <label><input type="radio" name="p1_q5" value="D"> D. Trình độ kỹ thuật của toàn bộ lực lượng lao động dẫn đầu khu vực.</label>
-        </div>
-        <button onclick="checkRadio('p1_q5', 'B', 'exp_p1_q5')">Kiểm tra đáp án</button>
-        <div id="exp_p1_q5" class="explanation">
-            <strong>Đáp án đúng: B</strong><br>
-            <em>Giải thích:</em> Nước ta có nguồn tài nguyên dồi dào cho công nghiệp năng lượng: than đá (Quảng Ninh), dầu khí (thềm lục địa phía Nam) và tiềm năng thủy điện lớn trên hệ thống sông ngòi. Đồng thời, quá trình công nghiệp hóa làm nhu cầu tiêu thụ điện, năng lượng tăng mạnh.
-        </div>
-    </div>
+html.push('<h2>PHẦN IV: Câu hỏi Trả lời ngắn</h2>');
+quizData.part4.forEach(q => {
+    html.push(`<div class="question-box"><p class="text-bold">Câu ${q.id}: ${q.q}</p><input type="text" id="p4_${q.id}" placeholder="Nhập câu trả lời..."><br>`);
+    html.push(`<button onclick="checkP4(${q.id}, '${q.c}')">Kiểm tra đáp án</button><div id="exp_p4_${q.id}" class="explanation"><strong>Đáp án chuẩn: ${q.c}</strong><br>${q.exp}</div></div>`);
+});
 
-    <div class="question-box">
-        <p class="text-bold">Câu 6: Ý nghĩa chiến lược chủ yếu về mặt kinh tế của các đảo và quần đảo nước ta là</p>
-        <div class="options">
-            <label><input type="radio" name="p1_q6" value="A"> A. Tạo điểm tựa vững chắc để bảo vệ an ninh biên giới vùng biển.</label>
-            <label><input type="radio" name="p1_q6" value="B"> B. Làm căn cứ tiến ra khơi xa khai thác hiệu quả nguồn lợi biển.</label>
-            <label><input type="radio" name="p1_q6" value="C"> C. Nơi duy nhất trên cả nước có thể phát triển ngành du lịch nghỉ dưỡng.</label>
-            <label><input type="radio" name="p1_q6" value="D"> D. Tạo thành hệ thống tiền tiêu canh gác và bảo vệ vùng đất liền.</label>
-        </div>
-        <button onclick="checkRadio('p1_q6', 'B', 'exp_p1_q6')">Kiểm tra đáp án</button>
-        <div id="exp_p1_q6" class="explanation">
-            <strong>Đáp án đúng: B</strong><br>
-            <em>Giải thích:</em> Đề hỏi về ý nghĩa **"kinh tế"**, vì vậy đáp án chính xác phải liên quan đến hoạt động sản xuất, khai thác kinh tế biển đảo. Các phương án A và D mang ý nghĩa về mặt an ninh quốc phòng.
-        </div>
-    </div>
+document.getElementById('quiz-content').innerHTML = html.join('');
 
-
-    <h2>PHẦN II: Câu hỏi Đúng / Sai (9 câu hỏi)</h2>
-    <p><i>Trong mỗi câu hỏi, chọn Đúng hoặc Sai cho cả 4 tiểu mục a, b, c, d.</i></p>
-
-    <div class="question-box">
-        <p class="text-bold">Câu 1: Cho đoạn thông tin: "Địa hình nước ta phân hóa đa dạng thành các vùng đồi núi và đồng bằng. Địa hình đồi núi chiếm 3/4 diện tích đất liền nhưng chủ yếu là đồi núi thấp." Hãy đánh giá tính đúng sai của các phát biểu sau:</p>
-        <div class="sub-q">
-            <div class="sub-q-item">
-                <p>a) Cấu trúc địa hình nước ta thể hiện tính chất phân bậc rõ rệt theo độ cao nhờ vận động tân kiến tạo.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q1_a" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q1_a" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>b) Địa hình đồi núi thấp chiếm ưu thế tuyệt đối giúp việc xây dựng mạng lưới giao thông miền núi diễn ra hoàn toàn thuận lợi, không gặp thiên tai.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q1_b" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q1_b" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>c) Bộ phận đồng bằng chỉ chiếm 1/4 diện tích và bị chia cắt thành đồng bằng châu thổ sông và các đồng bằng ven biển miền Trung.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q1_c" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q1_c" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>d) Hai hướng địa hình chính của các dãy núi nước ta là hướng tây bắc - đông nam và hướng vòng cung.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q1_d" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q1_d" value="S"> Sai</label>
-                </div>
-            </div>
-        </div>
-        <button onclick="checkTrueFalse(['p2_q1_a', 'p2_q1_b', 'p2_q1_c', 'p2_q1_d'], ['Đ', 'S', 'Đ', 'Đ'], 'exp_p2_q1')">Kiểm tra đáp án</button>
-        <div id="exp_p2_q1" class="explanation">
-            <strong>Đáp án: a) Đúng | b) Sai | c) Đúng | d) Đúng</strong><br>
-            <em>Giải thích:</em> b) Sai vì vùng đồi núi thấp tuy không quá cao nhưng địa hình vẫn hiểm trở, cắt xẻ mạnh, vào mùa mưa thường xuyên xảy ra sạt lở đất, lũ quét gây trở ngại lớn cho giao thông.
-        </div>
-    </div>
-
-    <div class="question-box">
-        <p class="text-bold">Câu 2: Đánh giá tác động của Biển Đông đối với đặc điểm thiên nhiên và khí hậu nước ta:</p>
-        <div class="sub-q">
-            <div class="sub-q-item">
-                <p>a) Biển Đông cung cấp lượng ẩm lớn làm tăng độ ẩm tương đối của các khối khí thổi vào đất liền.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q2_a" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q2_a" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>b) Do tác động của dòng biển ấm, Biển Đông làm cho khí hậu nước ta mang tính chất hoang mạc, bán hoang mạc khô hạn.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q2_b" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q2_b" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>c) Biển Đông góp phần làm giảm bớt tính chất khắc nghiệt, khô hanh của thời tiết lạnh đầu mùa đông.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q2_c" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q2_c" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>d) Biển Đông là nguồn gây ra các thiên tai nguy hiểm như bão, áp thấp nhiệt dới và sạt lở bờ biển ở nước ta.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q2_d" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q2_d" value="S"> Sai</label>
-                </div>
-            </div>
-        </div>
-        <button onclick="checkTrueFalse(['p2_q2_a', 'p2_q2_b', 'p2_q2_c', 'p2_q2_d'], ['Đ', 'S', 'Đ', 'Đ'], 'exp_p2_q2')">Kiểm tra đáp án</button>
-        <div id="exp_p2_q2" class="explanation">
-            <strong>Đáp án: a) Đúng | b) Sai | c) Đúng | d) Đúng</strong><br>
-            <em>Giải thích:</em> b) Sai vì Biển Đông làm khí hậu nước ta mang tính hải văn điều hòa, lượng mưa lớn, ngăn chặn quá trình hoang mạc hóa vốn xuất hiện ở các nước khác cùng vĩ độ tại Bắc Phi, Tây Á.
-        </div>
-    </div>
-
-    <div class="question-box">
-        <p class="text-bold">Câu 3: Khi nghiên cứu về nguồn lao động và vấn đề việc làm ở nước ta hiện nay:</p>
-        <div class="sub-q">
-            <div class="sub-q-item">
-                <p>a) Nguồn lao động nước ta rất dồi dào và tiếp tục tăng nhanh qua các năm, tạo áp lực lớn giải quyết việc làm.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q3_a" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q3_a" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>b) Trình độ chuyên môn kỹ thuật của lao động nước ta hiện nay đã đáp ứng hoàn toàn nhu cầu công nghệ cao tự động hóa.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q3_b" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q3_b" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>c) Tình trạng thiếu việc làm (vừa làm vừa nghỉ) diễn ra gay gắt nhất ở khu vực nông thôn do tính chất mùa vụ.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q3_c" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q3_c" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>d) Xu hướng cơ cấu lao động theo ngành đang dịch chuyển theo hướng giảm tỉ trọng ở khu vực nông - lâm - thủy sản.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q3_d" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q3_d" value="S"> Sai</label>
-                </div>
-            </div>
-        </div>
-        <button onclick="checkTrueFalse(['p2_q3_a', 'p2_q3_b', 'p2_q3_c', 'p2_q3_d'], ['Đ', 'S', 'Đ', 'Đ'], 'exp_p2_q3')">Kiểm tra đáp án</button>
-        <div id="exp_p2_q3" class="explanation">
-            <strong>Đáp án: a) Đúng | b) Sai | c) Đúng | d) Đúng</strong><br>
-            <em>Giải thích:</em> b) Sai vì phần lớn lao động nước ta chưa qua đào tạo (chiếm khoảng hơn 70%), lao động trình độ kỹ thuật cao, đáp ứng được tự động hóa vẫn còn thiếu hụt trầm trọng.
-        </div>
-    </div>
-
-    <div class="question-box">
-        <p class="text-bold">Câu 4: Về xu hướng chuyển dịch cơ cấu kinh tế theo lãnh thổ ở nước ta hiện nay:</p>
-        <div class="sub-q">
-            <div class="sub-q-item">
-                <p>a) Đang hình thành các vùng chuyên canh nông nghiệp quy mô lớn (như cà phê ở Tây Nguyên, lúa ở ĐBSCL).</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q4_a" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q4_a" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>b) Các khu công nghiệp tập trung, khu chế xuất quy mô lớn xuất hiện ngày càng nhiều tại các vùng kinh tế trọng điểm.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q4_b" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q4_b" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>c) Đông Nam Bộ đã vươn lên thành vùng dẫn đầu cả nước về giá trị sản xuất công nghiệp.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q4_c" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q4_c" value="S"> Sai</label>
-                </div>
-            </div>
-            <div class="sub-q-item">
-                <p>d) Quá trình phát triển các vùng kinh tế làm xóa bỏ hoàn toàn sự phân hóa giàu nghèo và chênh lệch thu nhập giữa các địa phương.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q4_d" value="Đ"> Đúng</label>
-                    <label><input type="radio" name="p2_q4_d" value="S"> Sai</label>
-                </div>
-            </div>
-        </div>
-        <button onclick="checkTrueFalse(['p2_q4_a', 'p2_q4_b', 'p2_q4_c', 'p2_q4_d'], ['Đ', 'Đ', 'Đ', 'S'], 'exp_p2_q4')">Kiểm tra đáp án</button>
-        <div id="exp_p2_q4" class="explanation">
-            <strong>Đáp án: a) Đúng | b) Đúng | c) Đúng | d) Sai</strong><br>
-            <em>Giải thích:</em> d) Sai vì sự phát triển năng động của một số vùng động lực kinh tế (như Đông Nam Bộ, ĐB Sông Hồng) trên thực tế có xu hướng làm gia tăng khoảng cách tuyệt đối về mức sống so với các vùng khó khăn (Tây Bắc, Tây Nguyên).
-        </div>
-    </div>
-
-    <div class="question-box">
-        <p class="text-bold">Câu 5: Nhận định về đặc điểm phát triển ngành thủy sản nước ta:</p>
-        <div class="sub-q">
-            <div class="sub-q-item">
-                <p>a) Sản lượng thủy sản nuôi trồng hiện nay nhìn chung đã vượt qua sản lượng thủy sản khai thác tự nhiên.</p>
-                <div class="tf-options">
-                    <label><input type="radio" name="p2_q5_a" value="Đ"> Đún
+function checkP1(id, c) {
+    let sel = document.querySelector(`input[name="p1_${id}"]:checked`);
+    if(!sel) return alert("Vui lòng chọn đáp án!");
+    alert(sel.value === c ? "Chính xác! 🎉" : "Chưa đúng rồi!");
+    document.getElementById(`exp_p1_${id}`).style.display = "block";
+}
+function checkP2(id, arrC) {
+    let sub = ['a','b','c','d'], score = 0;
+    for(let i=0; i<4; i++) {
+        let sel = document.querySelector(`input[name="p2_${id}_${sub[i]}"]:checked`);
+        if(!sel) return alert("Vui lòng tích đủ Đúng/Sai cho cả 4 ý!");
+        if(sel.value === arrC[i]) score++;
+    }
+    alert(`Bạn trả lời đúng ${score}/4 ý.`);
+    document.getElementById(`exp_p2_${id}`).style.display = "block";
+}
+function checkP3(id, arrC) {
+    for(let i=0; i<4; i++) {
+        if(!document.getElementById(`p3_${id}_${i}`).value) return alert("Vui lòng chọn đủ các cặp ghép nối!");
+    }
+    let score = 0;
+    for(let i=0; i<4; i++) {
+        if(document.getElementById(`p3_${id}_${i}`).value === arrC[i]) score++;
+    }
+    alert(`Bạn ghép chính xác ${score}/4 cặp.`);
+    document.getElementById(`exp_p3_${id}`).style.display = "block";
+}
+function checkP4(id, c) {
+    let val = document.getElementById(`p4_${id}`).value.trim();
+    if(!val) return alert("Vui lòng điền đáp án!");
+    if(val.toLowerCase() === c.toLowerCase() || (id===5 && val.toLowerCase()==='gió lào')) alert("Chính xác! 🎉");
+    else alert("Chưa chính xác!");
+    document.getElementById(`exp_p4_${id}`).style.display = "block";
+}
+</script>
+</body>
+</html>
