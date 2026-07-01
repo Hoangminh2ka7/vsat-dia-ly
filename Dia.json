@@ -1,0 +1,203 @@
+{
+  "examTitle": "Đề thi mô phỏng V-SAT Địa lí 12",
+  "multipleChoice": [
+    {
+      "id": 1,
+      "question": "Căn cứ vào Atlat Địa lí Việt Nam trang Khí hậu, trạm khí tượng nào sau đây có lượng mưa lớn nhất vào tháng IX?",
+      "options": ["A. Hà Nội", "B. Huế", "C. Nha Trang", "D. TP. Hồ Chí Minh"],
+      "correct": "B",
+      "explanation": "Huế nằm ở dải đất miền Trung, bắt đầu bước vào mùa mưa lớn từ tháng IX do tác động của gió mùa Đông Bắc qua biển kết hợp địa hình chắn gió và dải hội tụ nhiệt đới."
+    },
+    {
+      "id": 2,
+      "question": "Phát biểu nào sau đây đúng về vùng nội chí tuyến của nước ta?",
+      "options": ["A. Có hai lần Mặt Trời đi qua thiên đỉnh trong năm.", "B. Luôn chịu tác động của gió mùa Đông Bắc.", "C. Có lượng mưa phân bố đều giữa các tháng.", "D. Biên độ nhiệt độ năm ở mọi nơi đều bằng 0."],
+      "correct": "A",
+      "explanation": "Nước ta nằm hoàn toàn trong vùng nội chí tuyến bán cầu Bắc nên mọi nơi đều có 2 lần Mặt Trời đi qua thiên đỉnh trong năm."
+    },
+    {
+      "id": 3,
+      "question": "Biện pháp chủ yếu để tăng diện tích đất nông nghiệp ở vùng Đồng bằng sông Cửu Long là",
+      "options": ["A. Đẩy mạnh thâm canh và tăng vụ.", "B. Cải tạo đất phèn, đất mặn.", "C. Khai hoang các vùng rừng ngập mặn.", "D. Chuyển đổi toàn bộ đất rừng sang trồng lúa."],
+      "correct": "B",
+      "explanation": "Đồng bằng sông Cửu Long có diện tích đất phèn, đất mặn rất lớn. Việc thau chua rửa mặn, cải tạo đất là biện pháp hàng đầu để mở rộng diện tích canh tác."
+    },
+    {
+      "id": 4,
+      "question": "Phát biểu nào sau đây không đúng về đô thị hóa ở nước ta hiện nay?",
+      "options": ["A. Tỉ lệ dân thành thị tăng liên tục.", "B. Trình độ đô thị hóa ngày càng cao.", "C. Phân bố đô thị rất đều giữa các vùng.", "D. Đô thị có vai trò lớn trong kinh tế."],
+      "correct": "C",
+      "explanation": "Mạng lưới đô thị nước ta phân bố chưa đều, tập trung dày đặc ở các vùng đồng bằng (Đồng bằng sông Hồng) và thưa thớt ở vùng miền núi."
+    },
+    {
+      "id": 5,
+      "question": "Ngành công nghiệp năng lượng nước ta phát triển mạnh chủ yếu dựa trên thế mạnh nào?",
+      "options": ["A. Nguồn nguyên nhiên liệu phong phú và thị trường tiêu thụ lớn.", "B. Cơ sở hạ tầng hiện đại và đồng bộ trên cả nước.", "C. Nguồn vốn đầu tư nước ngoài dồi dào.", "D. Trình độ lao động kỹ thuật cao hàng đầu khu vực."],
+      "correct": "A",
+      "explanation": "Công nghiệp năng lượng cần tài nguyên (than, dầu khí, thủy năng) và nhu cầu tiêu thụ cao từ sản xuất, sinh hoạt."
+    },
+    {
+      "id": 6,
+      "question": "Ý nghĩa chiến lược về mặt kinh tế của các đảo và quần đảo nước ta là",
+      "options": ["A. Tạo điểm tựa để bảo vệ an ninh vùng biển.", "B. Căn cứ để tiến ra khơi xa, khai thác nguồn lợi biển.", "C. Nơi duy nhất có thể phát triển ngành du lịch.", "D. Tạo thành hệ thống tiền tiêu bảo vệ đất liền."],
+      "correct": "B",
+      "explanation": "Câu hỏi hỏi về ý nghĩa 'kinh tế', vì vậy đáp án đúng phải là tạo căn cứ khai thác nguồn lợi biển. Các ý khác thiên về an ninh quốc phòng."
+    }
+  ],
+  "trueFalse": [
+    {
+      "id": 1,
+      "question": "Cho đoạn thông tin: 'Địa hình nước ta có sự phân hóa đa dạng thành các vùng đồi núi và đồng bằng. Địa hình đồi núi chiếm 3/4 diện tích nhưng chủ yếu là đồi núi thấp.'",
+      "subQuestions": [
+        {"label": "a", "text": "Địa hình nước ta có tính chất phân bậc rõ rệt theo độ cao.", "correct": "Đ"},
+        {"label": "b", "text": "Địa hình đồi núi thấp chiếm ưu thế giúp việc giao thông miền núi hoàn toàn thuận lợi.", "correct": "S"},
+        {"label": "c", "text": "Đồng bằng chiếm 1/4 diện tích và chia thành đồng bằng châu thổ và đồng bằng ven biển.", "correct": "Đ"},
+        {"label": "d", "text": "Cấu trúc địa hình nước ta gồm hai hướng chính là tây bắc - đông nam và vòng cung.", "correct": "Đ"}
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Về ảnh hưởng của Biển Đông đối với khí hậu nước ta:",
+      "subQuestions": [
+        {"label": "a", "text": "Biển Đông làm tăng độ ẩm của các khối khí qua biển.", "correct": "Đ"},
+        {"label": "b", "text": "Nhờ Biển Đông, khí hậu nước ta mang tính chất hoang mạc khô hạn.", "correct": "S"},
+        {"label": "c", "text": "Biển Đông làm giảm tính chất khắc nghiệt của thời tiết lạnh khô vào mùa đông.", "correct": "Đ"},
+        {"label": "d", "text": "Biển Đông khiến lượng mưa nước ta giảm mạnh so với các nước cùng vĩ độ.", "correct": "S"}
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Về vấn đề việc làm và nguồn lao động nước ta hiện nay:",
+      "subQuestions": [
+        {"label": "a", "text": "Nguồn lao động nước ta dồi dào và tăng nhanh hàng năm.", "correct": "Đ"},
+        {"label": "b", "text": "Chất lượng lao động đã đáp ứng hoàn toàn nhu cầu công nghệ cao.", "correct": "S"},
+        {"label": "c", "text": "Tình trạng thiếu việc làm diễn ra gay gắt nhất ở khu vực thành thị.", "correct": "S"},
+        {"label": "d", "text": "Chuyển dịch cơ cấu lao động theo ngành kinh tế diễn ra còn chậm.", "correct": "Đ"}
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Về xu hướng chuyển dịch cơ cấu kinh tế theo lãnh thổ nước ta:",
+      "subQuestions": [
+        {"label": "a", "text": "Hình thành các vùng chuyên canh nông nghiệp quy mô lớn.", "correct": "Đ"},
+        {"label": "b", "text": "Các khu công nghiệp, khu chế xuất tập trung xuất hiện ngày càng nhiều.", "correct": "Đ"},
+        {"label": "c", "text": "Đông Nam Bộ đã trở thành vùng kinh tế phát triển năng động nhất.", "correct": "Đ"},
+        {"label": "d", "text": "Sự phát triển kinh tế vùng làm gia tăng khoảng cách tuyệt đối về phát triển giữa các địa phương.", "correct": "S"}
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Về ngành thủy sản nước ta hiện nay:",
+      "subQuestions": [
+        {"label": "a", "text": "Sản lượng thủy sản nuôi trồng đã vượt sản lượng thủy sản khai thác.", "correct": "Đ"},
+        {"label": "b", "text": "Đồng bằng sông Cửu Long là vùng dẫn đầu cả nước về nuôi trồng thủy sản.", "correct": "Đ"},
+        {"label": "c", "text": "Khai thác hải sản xa bờ đang được khuyến khích để bảo vệ nguồn lợi ven bờ.", "correct": "Đ"},
+        {"label": "d", "text": "Thị trường xuất khẩu thủy sản ổn định, không gặp bất kỳ rào cản nào.", "correct": "S"}
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Khi nói về giao thông vận tải đường bộ (đường ô tô) nước ta:",
+      "subQuestions": [
+        {"label": "a", "text": "Là loại hình vận tải chiếm tỉ trọng lớn nhất về khối lượng hàng hóa vận chuyển.", "correct": "Đ"},
+        {"label": "b", "text": "Mạng lưới đường bộ đã phủ kín khắp các vùng miền.", "correct": "Đ"},
+        {"label": "c", "text": "Tuyến đường xương sống theo chiều Bắc - Nam là Quốc lộ 1.", "correct": "Đ"},
+        {"label": "d", "text": "Đường bộ có ưu điểm lớn nhất là chi phí rẻ và vận chuyển được khối lượng siêu trọng đi viễn dương.", "correct": "S"}
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Về vùng Trung du và miền núi Bắc Bộ:",
+      "subQuestions": [
+        {"label": "a", "text": "Là vùng có thế mạnh lớn nhất nước ta về thủy điện.", "correct": "Đ"},
+        {"label": "b", "text": "Khí hậu có mùa đông lạnh tạo điều kiện phát triển cây dược liệu, cận nhiệt.", "correct": "Đ"},
+        {"label": "c", "text": "Toàn bộ khoáng sản của vùng đã được khai thác ở mức độ tối đa.", "correct": "S"},
+        {"label": "d", "text": "Kinh tế của vùng phát triển đồng đều giữa các tỉnh nội địa và biên giới.", "correct": "S"}
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Về vùng kinh tế Tây Nguyên:",
+      "subQuestions": [
+        {"label": "a", "text": "Là vùng duy nhất ở nước ta hiện nay không giáp biển.", "correct": "Đ"},
+        {"label": "b", "text": "Đất đỏ bazan có tầng phong hóa sâu là thế mạnh để trồng cây công nghiệp lâu năm.", "correct": "Đ"},
+        {"label": "c", "text": "Cà phê là cây trồng biểu tượng và đứng đầu cả nước về sản lượng.", "correct": "Đ"},
+        {"label": "d", "text": "Công nghiệp của vùng đóng vai trò chủ đạo trong cơ cấu GDP cả nước.", "correct": "S"}
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Về phát triển kinh tế biển ở Duyên hải Nam Trung Bộ:",
+      "subQuestions": [
+        {"label": "a", "text": "Vùng có nhiều điều kiện thuận lợi nhất để xây dựng các cảng nước sâu.", "correct": "Đ"},
+        {"label": "b", "text": "Nghề làm muối phát triển mạnh ở Sa Huỳnh, Cà Ná nhờ số giờ nắng nhiều.", "correct": "Đ"},
+        {"label": "c", "text": "Du lịch biển đảo là thế mạnh độc quyền, không vùng nào có được.", "correct": "S"},
+        {"label": "d", "text": "Việc đánh bắt xa bờ góp phần khẳng định chủ quyền biển đảo quốc gia.", "correct": "Đ"}
+      ]
+    }
+  ],
+  "matching": [
+    {
+      "id": 1,
+      "title": "Ghép cặp vùng kinh tế với thế mạnh nông nghiệp đặc trưng:",
+      "left": ["1. Tây Nguyên", "2. Đồng bằng sông Hồng", "3. Trung du miền núi Bắc Bộ", "4. Đồng bằng sông Cửu Long"],
+      "right": ["A. Trồng lúa cao sản, nuôi trồng thủy sản nước ngọt lớn nhất.", "B. Trồng cây cận nhiệt (chè), dược liệu ôn đới.", "C. Trồng cây công nghiệp lâu năm (cà phê, cao su) trên đất bazan.", "D. Thâm canh lúa trúng mùa, vụ đông phát triển mạnh cây ưa lạnh."],
+      "correct": {"1": "C", "2": "D", "3": "B", "4": "A"}
+    },
+    {
+      "id": 2,
+      "title": "Ghép tên nhà máy thủy điện với con sông tương ứng:",
+      "left": ["1. Sơn La", "2. Yaly", "3. Trị An", "4. Thác Bà"],
+      "right": ["A. Sông Chảy", "B. Sông Sê San", "C. Sông Đồng Nai", "D. Sông Đà"],
+      "correct": {"1": "D", "2": "B", "3": "C", "4": "A"}
+    },
+    {
+      "id": 3,
+      "title": "Ghép trung tâm công nghiệp với đặc điểm quy mô tương ứng:",
+      "left": ["1. TP. Hồ Chí Minh", "2. Hải Phòng", "3. Đà Nẵng", "4. Thanh Hóa"],
+      "right": ["A. Trung tâm quy mô trung bình.", "B. Trung tâm quy mô rất lớn (trên 120 nghìn tỷ đồng).", "C. Trung tâm quy mô nhỏ.", "D. Trung tâm quy mô lớn (từ 50 - 120 nghìn tỷ đồng)."],
+      "correct": {"1": "B", "2": "D", "3": "A", "4": "C"}
+    },
+    {
+      "id": 4,
+      "title": "Ghép loại đất chính với vùng phân bố chủ yếu:",
+      "left": ["1. Đất phù sa ngọt", "2. Đất feralit trên đá vôi", "3. Đất bazan", "4. Đất cát ven biển"],
+      "right": ["A. Tây Nguyên", "B. Duyên hải miền Trung", "C. Dọc sông Tiền, sông Hậu", "D. Vùng núi Đông Bắc, Tây Bắc"],
+      "correct": {"1": "C", "2": "D", "3": "A", "4": "B"}
+    },
+    {
+      "id": 5,
+      "title": "Ghép tài nguyên khoáng sản với địa danh phân bố chính:",
+      "left": ["1. Than đá", "2. Bôxit", "3. Dầu mỏ", "4. Apatit"],
+      "right": ["A. Lào Cai", "B. Quảng Ninh", "C. Thềm lục địa phía Nam", "D. Tây Nguyên"],
+      "correct": {"1": "B", "2": "D", "3": "C", "4": "A"}
+    }
+  ],
+  "shortAnswer": [
+    {
+      "id": 1,
+      "question": "Năm 2020, dân số thành thị nước ta là 35,9 triệu người, tổng dân số cả nước là 97,3 triệu người. Tính tỉ lệ dân thành thị của nước ta năm đó (Làm tròn đến 1 chữ số thập phân, không viết dấu %).",
+      "correct": "36.9"
+    },
+    {
+      "id": 2,
+      "question": "Nước ta có bao nhiêu tỉnh và thành phố trực thuộc Trung ương có đường biên giới giáp với biển? (Điền một con số cụ thể).",
+      "correct": "28"
+    },
+    {
+      "id": 3,
+      "question": "Điền từ còn thiếu vào chỗ trống: Đường bờ biển nước ta kéo dài từ Móng Cái (Quảng Ninh) đến .......... (Kiên Giang).",
+      "correct": "Hà Tiên"
+    },
+    {
+      "id": 4,
+      "question": "Vùng kinh tế nào của nước ta có diện tích lớn nhất trong 7 vùng kinh tế?",
+      "correct": "Trung du và miền núi Bắc Bộ"
+    },
+    {
+      "id": 5,
+      "question": "Gió mùa Tây Nam thổi vào nước ta vào đầu mùa hạ gặp dãy Trường Sơn gây ra hiện tượng thời tiết khô nóng đặc trưng ở miền Trung được gọi là hiệu ứng gì?",
+      "correct": "Phơn"
+    }
+  ]
+}
